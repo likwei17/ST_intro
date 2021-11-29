@@ -16,3 +16,7 @@ Enjoy it!
 
 st.write(df)
 st.line_chart(df)
+st.area_chart(df)
+
+myslider = st.slider('Celsius')
+st.write(myslider, 'in Farentheit is', myslider * 9/5 + 32)
