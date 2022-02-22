@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
+st.title('A simple app')
+
 myslider = st.slider('Celsius')
 st.write(myslider, 'in Farentheit is', myslider * 9/5 + 32)
 
@@ -8,7 +10,7 @@ myslider2 = st.slider('Inch')
 st.write(myslider2, 'in cm is', myslider2 * 2.54)
 
 myslider3 = st.slider('Feet')
-st.write(myslider3, 'in cm is', myslider2 * 30.48)
+st.write(myslider3, 'in cm is', myslider3 * 30.48)
 
 
 data = {
@@ -18,7 +20,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-st.title('A simple app')
+
 st.subheader('Automate with streamlit')
 st.write('''first app.
 Enjoy it!
