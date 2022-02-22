@@ -8,7 +8,7 @@ data = {
 
 df = pd.DataFrame(data)
 
-st.title('our first app')
+st.title('A simple app')
 st.subheader('Automate with streamlit')
 st.write('''first app.
 Enjoy it!
@@ -20,3 +20,6 @@ st.area_chart(df)
 
 myslider = st.slider('Celsius')
 st.write(myslider, 'in Farentheit is', myslider * 9/5 + 32)
+
+myslider2 = st.slider('Inch')
+st.write(myslider2, 'in cm is', myslider2 * 2.54)
