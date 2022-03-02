@@ -12,22 +12,21 @@ st.write(myslider2, 'in cm is', myslider2 * 2.54)
 myslider3 = st.slider('Feet')
 st.write(myslider3, 'in cm is', myslider3 * 30.48)
 
-
-data = {
-  'Series_1':[1,3,4,5,7],
-  'Series_2':[10,30,40,100,250]
-}
+data = pd.read_csv('students.csv')
 
 df = pd.DataFrame(data)
 
-
 st.subheader('Automate with streamlit')
-st.write('''first app.
+st.write('''Student Score
 Enjoy it!
 ''')
 
+df = df.melt(id_vars=['Module'], var_name='student', value_name='Score')
+df['Score'] = df['Score'].fillna(0)
+df['Module'] = df['Module'].astype(str)
+df['student'] = df['student'].astype(str)
+
+Group_choice = st.sidebar.multiselect("Student_ID:", df.student, default=df.student)
 st.write(df)
-st.line_chart(df)
-st.area_chart(df)
 
 
