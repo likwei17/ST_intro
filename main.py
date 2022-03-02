@@ -26,7 +26,7 @@ df['Score'] = df['Score'].fillna(0)
 df['Module'] = df['Module'].astype(str)
 df['student'] = df['student'].astype(str)
 
-Group_choice = st.sidebar.multiselect("Student_ID:", df.student, default=df.student)
+Group_choice = st.selectbox("Student_ID:", df.student)
 st.write(df)
 
 
