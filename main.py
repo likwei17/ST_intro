@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title('A simple app')
+st.title('A simple dimple App')
 
 myslider = st.slider('Celsius')
 st.write(myslider, 'in Farentheit is', myslider * 9/5 + 32)
@@ -11,6 +11,10 @@ st.write(myslider2, 'in cm is', myslider2 * 2.54)
 
 myslider3 = st.slider('Feet')
 st.write(myslider3, 'in cm is', myslider3 * 30.48)
+
+st.set_page_config(layout = "wide")
+st.subheader('Score Metrics')
+st.write('''Scorecard for students''')
 
 data = pd.read_csv('students.csv')
 
