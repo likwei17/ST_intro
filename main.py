@@ -15,18 +15,19 @@ st.write(myslider3, 'in cm is', myslider3 * 30.48)
 data = pd.read_csv('students.csv')
 
 df = pd.DataFrame(data)
+#df = df.melt(id_vars=['Module'], var_name='student', value_name='Score')
+#print (df)
+dff = df[(df['Student'].astype(str).str[:4] == 'MA21')]
+dff.set_index('Student', inplace = True)
+#print(dff)
 
-st.subheader('Automate with streamlit')
-st.write('''Student Score
-Enjoy it!
-''')
+#print(dff.dtypes)
+# slist = dff['student'].unique()
+# print(slist)
+# student = st.sidebar.selectbox("Select a student:",slist)
 
-df = df.melt(id_vars=['Module'], var_name='student', value_name='Score')
-df['Score'] = df['Score'].fillna(0)
-df['Module'] = df['Module'].astype(str)
-df['student'] = df['student'].astype(str)
-
-Group_choice = st.selectbox("Student_ID:", df.student)
-st.write(df)
+# fig = px.line(df[df['student'] == student], 
+#     x = "Module", y = "Score", title = student)
+st.bar_chart(dff)
 
 
