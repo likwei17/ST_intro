@@ -12,7 +12,6 @@ st.write(myslider2, 'in cm is', myslider2 * 2.54)
 myslider3 = st.slider('Feet')
 st.write(myslider3, 'in cm is', myslider3 * 30.48)
 
-st.set_page_config(layout = "wide")
 st.subheader('Score Metrics')
 st.write('''Scorecard for students''')
 
